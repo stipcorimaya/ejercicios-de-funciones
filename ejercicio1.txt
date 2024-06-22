@@ -1,1 +1,17 @@
 Cálculo del Área de un Círculo:
+#include<iostream>
+#include<cmath>
+using namespace std;
+double areac(double a){
+	double c;
+	c=pow(a,2)*M_PI;
+	return c;
+}
+int main(){
+	double rad,area;
+	cout<<"escribe el radio del circulo"<<endl;
+	cin>>rad;
+	area= areac(rad);
+	cout<<"el area de tu circulo es: "<<area;
+	return 0;
+}
