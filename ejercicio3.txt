@@ -1,1 +1,22 @@
 Cálculo de la Hipotenusa:
+Crea un programa que calcule la hipotenusa de un triángulo rectángulo utilizando la fórmula de Pitágoras
+
+#include<iostream>
+#include<cmath>
+using namespace std;
+int hipotenusa(int a,int b){
+	int c;
+	c= sqrt(pow(a,2)+pow(b,2));
+	return c;
+}
+int main(){
+	int co,ca,h;
+	cout<<"segun a un triangulo rectangulo"<<endl;
+	cout<<"escribir el cateto opuesto: ";
+	cin>>co;
+	cout<<"escribir el cateto adyacente: ";
+	cin>>ca;
+	h=hipotenusa(ca,co);
+	cout<<"la hipotenusa del triangulo es: "<<h;
+	return 0;
+}
