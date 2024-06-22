@@ -1,1 +1,27 @@
 Generador de Números Aleatorios:
+Crea un programa que genere y muestre una serie de números aleatorios entre 0 y un número máximo especificado por el usuario. El programa solicitará al usuario la cantidad de números aleatorios que desea generar y el valor máximo permitido.
+
+#include<iostream>
+#include<cstdlib>
+#include<ctime>
+using namespace std;
+int lucky(int a){
+	int c;
+	c=rand()%(a+1);
+	return c;
+}
+int main(){
+    srand(time(0));
+	int maxnum,numale,a;
+	cout<<"escribe el valor maximo de numeros aleatorios positivos empezando desde el 0: ";
+	cin>>maxnum;
+	cout<<"cantidad de numeros aleatorios que se va a escribir: ";
+	cin>>numale;
+	cout<<"estos son tus numeros aleatorios: ";
+	for(int i=1; i<=numale;i++){
+		a=lucky(maxnum);
+		cout<<a<<endl;
+		a=0;
+	}
+	return 0;
+}
