@@ -1,1 +1,26 @@
 Cálculo de Raíces de una Ecuación Cuadrática:
+
+#include<iostream>
+#include<cmath>
+using namespace std;
+double discriminante(int x,int y,int z){
+	double w;
+	w=sqrt(pow(y,2)-4*x*z);
+	return w;
+}
+int main(){
+	double a,b,c,x1,x2;
+	cout<<"segun la ecuacion cuadratica a(x^2)+bx+c=0"<<endl;
+	cout<<"escribe el valor de a: ";
+	cin>>a;
+	cout<<"escribe el valor de b: ";
+	cin>>b;
+	cout<<"escribe el valor de c: ";
+	cin>>c;
+	x1=((-1)*b+discriminante(a,b,c))/(2*a);
+	x2=((-1)*b-discriminante(a,b,c))/(2*a);
+	cout<<"las raices de la ecuacion son:"<<endl;
+	cout<<"x1= "<<x1<<endl;
+	cout<<"x2= "<<x2<<endl;
+	return 0;
+}
