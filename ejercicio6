@@ -1,1 +1,49 @@
 Juego de Piedra, Papel y Tijeras:
+#include<iostream>
+#include<cstdlib>
+#include<stdio.h>
+#include<ctime>
+using namespace std;
+void PiPaTi(string &c){
+	srand(time(0));
+	int b=(rand()%3)+1;
+	if(b==1){
+		c="piedra";
+	}else if(b==2){
+		c="papel";
+	}else{
+		c="tijera";
+	}
+}
+int main(){
+	string jug,ppt;
+	int punbot=0;
+	int punjug=0;
+	cout<<"en este juego ganara el que tenga 3 victorias"<<endl;
+	do{
+	cout<<"escribe en minusculas una de las siguientes elecciones: "<<endl;
+	cout<<"| piedra - papel - tijera |"<<endl;
+	cin>>jug;
+	PiPaTi(ppt);
+	cout<<"BOT: "<<ppt<<endl;
+	if((jug=="piedra" and ppt=="piedra") or (jug=="papel" and ppt=="papel") or(jug=="tijera" and ppt=="tijera")){
+		cout<<"---empate---"<<endl;
+		}else if((jug=="piedra" and ppt=="papel") or (jug=="papel" and ppt=="tijera") or (jug=="tijera" and ppt=="piedra")){
+		punbot=punbot+1;
+		cout<<"---perdiste---"<<endl;
+		cout<<"BOT = "<<punbot<<" victorias"<<endl;
+		}else if((jug=="piedra" and ppt=="tijera") or (jug=="papel" and ppt=="piedra") or (jug=="tijera" and ppt=="papel")){
+		punjug=punjug+1;
+		cout<<"---ganaste---"<<endl;
+		cout<<"usted = "<<punjug<<" victorias"<<endl;
+		}else{
+		cout<<"vuelve a escribir, correctamente"<<endl;
+		}
+	}while(punbot<3 and punjug<3);
+	if(punjug==3){
+		cout<<"#felicitaciones ganaste las 3 victorias";
+	}else{
+		cout<<"#el BOT gano 3 victorias, perdiste";
+	}
+	return 0;
+}
